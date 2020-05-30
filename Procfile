@@ -1,0 +1,1 @@
+web: gunicorn spaceapp.wsgi --log-file -

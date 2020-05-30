@@ -1,0 +1,72 @@
+{%extends 'fsociety/base.html'%}
+
+{%block content%}
+<div class="main-contain">
+    <div class="request-contain">
+        <table>
+            <tr>
+                <td>Your Data</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{name}}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{country}}</td>
+            </tr>
+            <tr>
+                <td>Place</td>
+                <td>{{place}}</td>
+            </tr>    
+            <tr>
+                <th>PREDICTION</th>
+            </tr>
+            <tr>
+                <td>Prediction Date</td>
+                <td>{{date}}</td>
+            </tr>
+            <tr>
+                <td>Mean Temperature</td>
+                <td>{{predictedtemp}}</td>
+            </tr>
+            <tr>
+                <td>Precipitation</td>
+                <td>{{predictedprep}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="searchresults">
+    <logo>Search Results:</logo>
+    <div class="result">
+        
+        {%for crop in cropsinfo%}
+
+
+        <h2 style="text-transform: uppercase;">{{crop.name}}:</h2>
+        <p>
+            <span class="smallspan">
+                Maximum Temperature : {{crop.maxtemp}} Minimum Temperature : {{crop.mintemp}}
+                Maximum Precipitation : {{crop.maxppt}} Minimum Precipitation : {{crop.minppt}}            
+            </span>
+            <br>    
+        </p>
+        <br>
+        {%if crop.wikipedia%}
+        <p class="searchbody">
+            {{crop.wikipedia}}
+        </p>
+        <span class="linkcollection">
+            <a id="searchlink" target="blank" href="https://www.google.com/search?q=nutrient+in+{{crop.name}}">Nutrients in {{crop.name}} here</a>
+            <a id="searchlink" target="blank" href="https://www.google.com/search?q=how+to+plant+{{crop.name}}">Plant {{crop.name}} here</a>
+            <a id="searchlink" target="blank" href="{{crop.wikipedia_url}}">Wikipedia</a>
+        </span>
+        <br>
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+
+{%endblock%}
+
