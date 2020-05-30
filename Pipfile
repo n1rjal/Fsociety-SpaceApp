@@ -6,11 +6,12 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
-gunicorn = "*"
 wikipedia = "*"
-whitenoise = "*"
+django = "*"
 numpy = "*"
+gunicorn = "*"
+whitenoise = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3.8"
