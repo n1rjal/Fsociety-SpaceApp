@@ -33,8 +33,9 @@
         </table>
     </div>
 </div>
+{%if crops%}
 <div class="searchresults">
-    <logo>Search Results:</logo>
+    <logo>Prediction Results:</logo>
     <div class="result">
         
         {%for crop in cropsinfo%}
@@ -43,6 +44,7 @@
         <h2 style="text-transform: uppercase;">{{crop.name}}:</h2>
         <p>
             <span class="smallspan">
+                Conditions required : 
                 Maximum Temperature : {{crop.maxtemp}} Minimum Temperature : {{crop.mintemp}}
                 Maximum Precipitation : {{crop.maxppt}} Minimum Precipitation : {{crop.minppt}}            
             </span>
@@ -63,6 +65,9 @@
         {%endfor%}
     </div>
 </div>
+{%else%}
+<logo>CANNOT PREDICT THE RESULT</logo>
+{%endif%}
 
 {%endblock%}
 
