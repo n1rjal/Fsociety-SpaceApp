@@ -205,6 +205,10 @@ tr:nth-child(even) {
   margin:0;
 }
 
+#searchlink:hover{
+  text-decoration: underline;
+}
+
 .searchbody{
   text-align:justify;
 }
