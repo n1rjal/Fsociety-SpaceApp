@@ -121,6 +121,7 @@ form fieldset legend{
 }
 
 fieldset input[type="text"],fieldset input[type="date"],select{
+  color:black;
   width:80%;
   height:5vh;
   margin:10px 1cm;
@@ -134,10 +135,12 @@ fieldset input[type="date"]{
 
 fieldset input[type="text"]{
   border:0;
+  color:black;
   border-bottom: 1px solid black;
   padding-left:10px;
   outline:0;
-  border-radius: 0; 
+  border-radius: 0;
+
 }
 
 input[type=submit] {
