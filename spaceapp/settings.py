@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b)t^n7l#81!3$zh9d!rup1a4)(zh_o0_3sz@2nh%3kjje9&-tn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["fsocietyspaceapp.herokuapp.com","localhost"]
 

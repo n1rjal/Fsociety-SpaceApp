@@ -16,7 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
   </head>
   <body>
-    
+    <nav>
+      <a href="{%url 'home'%}"><logo>F-society</logo></a>
+      
+      <a href="{%url 'home'%}">Home</a>
+      <a target="blank" href="https://github.com/n1rjal/Fsociety-SpaceApp#meta">Meta</a>
+      <a target="blank" href="https://covid19.spaceappschallenge.org/challenges/covid-challenges/food-thought/teams/fsociety/project">Project Panel</a>
+      <a href="{%url 'home'%}" translate="yes">Nepali</a>
+    </nav>
     {%block content%}
     {%endblock%}
     <script src="{%static 'fsociety/index.js'%}" async defer></script>

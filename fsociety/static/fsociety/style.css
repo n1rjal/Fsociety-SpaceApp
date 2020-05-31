@@ -11,15 +11,22 @@
 }
 
 nav{
-  display:inline;
-  justify-content: space-between;
-  margin:0 40vw 0 10vw;
+  display:flex;
+  line-height: 5vh;
+  padding: 2vh 6vw;
+  width:100vw;
+  max-width: 100%;
 }
 
-nav a {
-  display:block;
+
+nav a , nav logo{
+  justify-content: center;
+  margin:0;
+  flex:1;
+}
+nav a{
   color:black;
-  margin:0 20vw;
+  text-transform: uppercase;
 }
 
 logo {
@@ -140,11 +147,10 @@ fieldset input[type="text"]{
   padding-left:10px;
   outline:0;
   border-radius: 0;
-
 }
 
 input[type=submit] {
-  width: 10%;
+  width: 50%;
   margin:10px auto;
   padding:8px 4px;
   display:block;
