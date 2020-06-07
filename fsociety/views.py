@@ -1,4 +1,4 @@
-rom django.shortcuts import render,Http404
+from django.shortcuts import render,Http404
 from django.http import JsonResponse
 import pickle
 import numpy as np
