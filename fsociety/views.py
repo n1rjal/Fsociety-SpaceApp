@@ -1,4 +1,4 @@
-from django.shortcuts import render,Http404
+rom django.shortcuts import render,Http404
 from django.http import JsonResponse
 import pickle
 import numpy as np
@@ -22,6 +22,7 @@ def forecast_temp(date):
         
     summ=summ/30
 
+    summ=abs(round(summ,2))
     msg=str(abs(round(summ,2)))+unit
     return([summ,msg])
 
@@ -35,6 +36,7 @@ def forecast_prec(date):
         sum+=a
 
     sum=abs(sum)
+    sum=abs(round(sum,2))
     msg=""+str(sum)+unit
     return ([sum,msg])
 
@@ -68,8 +70,10 @@ def reqitem(request):
             output.append(crop.json())
         
         context={
-            "predictedtemp":msgtemp,
-            "predictedprep":msgprec,
+            "predictedtempnumber":totaltemp,
+            "predictedprenumber":totalprec,
+            "predictedtempmsg":msgtemp,
+            "predictedprepmsg":msgprec,
             "name":vardict['name'],
             "place":vardict['place'],
             "date":year,
@@ -112,8 +116,10 @@ def apireqitem(request):
         if output:
                 
             context={
-                "predictedtemp":msgtemp,
-                "predictedprep":msgprec,
+                "predictedtempnumber":totaltemp,
+                "predictedprenumber":totalprec,
+                "predictedtempmsg":msgtemp,
+                "predictedprepmsg":msgprec,
                 "name":vardict['name'],
                 "place":vardict['place'],
                 "date":year,
