@@ -12,6 +12,7 @@ numpy = "*"
 gunicorn = "*"
 whitenoise = "*"
 sklearn = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
