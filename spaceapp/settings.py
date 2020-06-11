@@ -83,7 +83,7 @@ DATABASES = {
         "NAME":"ejxjvznv",
         'HOST': "john.db.elephantsql.com",
         "USER":"ejxjvznv",
-        "PASSWORD":"os.environ.get('fsociety_password')",
+        "PASSWORD":os.environ.get('fsociety_password'),
         "PORT":"5432"
     }
 }
