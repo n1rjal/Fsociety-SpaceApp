@@ -11,13 +11,17 @@ class Crops(models.Model):
     minppt=models.IntegerField(blank=False)
     photo_url=models.URLField(max_length=400,blank=True)
     def json(self):
-        text=wikipedia.summary(self.name, sentences=4)
-        text=text.strip()
-        url=wikipedia.page(self.name).url
+        photo=self.photo_url
         try:
-            photo=self.photo_url
+            text=wikipedia.summary(self.name, sentences=4)
+            text=text.strip()
+            url=wikipedia.page(self.name).url
+            
         except:
             photo=''
+            text=""
+            url=""
+            
         return ({
             "name":self.name,
             "maxtemp":self.maxtemp,
@@ -27,6 +31,8 @@ class Crops(models.Model):
             "wikipedia":text,
             "wikipedia_url":url,
             "photo_url":photo,
+            "nutrient":"https://www.google.com/search?q=nutrient+in+"+str(self.name),
+            "howto":"https://www.google.com/search?q=how+to+plant+"+str(self.name),
         })
 
     def __str__(self):

@@ -64,7 +64,6 @@ def reqitem(request):
         
         crops2=allcropslt.intersection(allcropsgt)
         crops=crops2.intersection(crops1)
-
         print(crops)
         output=[]
         for crop in crops:

@@ -24,11 +24,11 @@
             </tr>
             <tr>
                 <td>Temperature</td>
-                <td>{{predictedtemp}}</td>
+                <td>{{predictedtempmsg}}</td>
             </tr>
             <tr>
                 <td>Precipitation</td>
-                <td>{{predictedprep}}</td>
+                <td>{{predictedprepmsg}}</td>
             </tr>
         </table>
     </div>
@@ -47,21 +47,32 @@
                 Conditions required : 
                 Maximum Temperature : {{crop.maxtemp}}C Minimum Temperature : {{crop.mintemp}}C
                 Maximum Precipitation : {{crop.maxppt}}mm per month Minimum Precipitation : {{crop.minppt}}mm per month            
-            </span>
+            </span><br>
             <br>    
+        </p>
+        <p>
+            <p>
+                <img src="{{crop.photo_url}}" height=200 width=200>
+            </p>
         </p>
         <br>
         {%if crop.wikipedia%}
         <p class="searchbody">
             {{crop.wikipedia}}
         </p>
+        {%else%}
+        No suitable wikipedia data
+        {%endif%}
         <span class="linkcollection">
             <a id="searchlink" target="blank" href="https://www.google.com/search?q=nutrient+in+{{crop.name}}">Nutrients in {{crop.name}} here</a>
             <a id="searchlink" target="blank" href="https://www.google.com/search?q=how+to+plant+{{crop.name}}">Plant {{crop.name}} here</a>
+            {%if crop.wikipedia%}
+        
             <a id="searchlink" target="blank" href="{{crop.wikipedia_url}}">Wikipedia</a>
+            {%endif%}
         </span>
         <br>
-        {%endif%}
+        
         {%endfor%}
     </div>
 </div>
